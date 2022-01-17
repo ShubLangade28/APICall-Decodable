@@ -37,8 +37,7 @@ class SecondViewController: UIViewController {
         phoneLabel.text = phone
         websiteLabel.text = website
         companyLabel.text = company
-        
+        title = "Detailed Information"
 
-        
     }
 }

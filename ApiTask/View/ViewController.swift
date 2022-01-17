@@ -1,26 +1,19 @@
-//
-//  ViewController.swift
-//  ApiTask
-//
-//  Created by Mac on 07/01/22.
-// Api program
-// ApiTask
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var myTable: UITableView!
     var userAllInfo = [Users]()
-   // var fullAddress = ""
     
     let api = ApiManager()
     var apiCallOnes = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         myTable.delegate = self
         myTable.dataSource = self
+        title = "UserProfile"
         
     }
     
@@ -36,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func callAPI()
     {
         api.getData { (userDetails) in
-           self.userAllInfo = userDetails
+            self.userAllInfo = userDetails
             DispatchQueue.main.async {
                 self.myTable.reloadData()
             }
@@ -67,6 +60,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
     }
     
-
 }
 

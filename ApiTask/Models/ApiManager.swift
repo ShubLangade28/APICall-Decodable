@@ -1,9 +1,3 @@
-//
-//  ApiManeger.swift
-//  ApiTask
-//
-//  Created by Mac on 07/01/22.
-//
 
 import Foundation
 class ApiManager
@@ -17,8 +11,6 @@ class ApiManager
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
-        
-        
         
         let task = session.dataTask(with: request) { (data, response, error) in
             guard let response = response as? HTTPURLResponse else
@@ -48,7 +40,6 @@ class ApiManager
            
             userAllDetails.append(contentsOf: userData)
         }
-        
         
         catch
         {
